@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USA Speeding Ticket Cost & Insurance Hike Calculator 2026</title>
+    <meta name="description" content="Calculate the total financial impact of speeding tickets in 51 states. Estimate fines and insurance increases for 2026.">
+    <link rel="stylesheet" href="https://fonts.googleapis.com">
+    <style>
+        :root { --primary: #1e293b; --accent: #2563eb; --bg: #f8fafc; --white: #ffffff; --border: #e2e8f0; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--primary); margin: 0; padding: 0; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 15px; }
+        .hero { text-align: center; padding: 45px 10px 25px 10px; }
+        h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.05em; margin: 0; line-height: 1.1; }
+        .sub-text { font-size: 1.1rem; color: #64748b; margin: 15px 0 30px 0; }
+
+        /* 分享區塊 */
+        .share-box { display: flex; gap: 10px; justify-content: center; margin-bottom: 40px; }
+        .s-btn { padding: 10px 20px; border-radius: 10px; color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 700; transition: 0.2s; }
+        .s-fb { background: #1877F2; } .s-tw { background: #000; } .s-wa { background: #25D366; }
+        .s-btn:hover { opacity: 0.8; transform: translateY(-2px); }
+
+        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 50px; }
+        @media (min-width: 768px) { .grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); } }
+        .state-card { background: #fff; height: 75px; display: flex; align-items: center; justify-content: center; border-radius: 18px; text-decoration: none; color: var(--primary); font-weight: 700; border: 1px solid var(--border); transition: 0.2s; padding: 10px; text-align: center; }
+        .state-card:hover { background: var(--primary); color: #fff; transform: translateY(-3px); }
+
+        footer { text-align: center; padding: 30px 0; border-top: 1px solid var(--border); color: #94a3b8 !important; margin-top: 40px; }
+        footer p { font-size: 13px !important; margin: 8px 0 !important; color: #94a3b8 !important; }
+        footer a { color: var(--accent) !important; text-decoration: none !important; font-weight: 700 !important; font-size: 13px !important; margin: 0 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <h1>Ticket Impact Tool</h1>
+            <p class="sub-text">Calculates 2026 speeding fines and insurance surcharges by state.</p>
+			<div class="share-box">
+				<a href="#" id="main-fb" class="s-btn s-fb" target="_blank">Share on FB</a>
+				<a href="#" id="main-tw" class="s-btn s-tw" target="_blank">Share on X</a>
+				<a href="#" id="main-wa" class="s-btn s-wa" target="_blank">WhatsApp</a>
+			</div>
+        </header>
+        <nav class="grid" id="state-grid"></nav>
+        <footer><p>© 2026 Ticket Impact Tool. For estimation purposes only.<a href="index.html">Home</a> <a href="privacy.html">Privacy Policy</a></p></footer>
+    </div>
+    <script>
+		// 自動初始化主頁分享連結
+		const currentUrl = encodeURIComponent(window.location.href);
+		const shareText = encodeURIComponent("Check out this 2026 Speeding Ticket & Insurance Cost Calculator!");
+		
+		document.getElementById('main-fb').href = `https://www.facebook.com{currentUrl}`;
+		document.getElementById('main-tw').href = `https://twitter.com{currentUrl}&text=${shareText}`;
+		document.getElementById('main-wa').href = `https://api.whatsapp.com{shareText}%20${currentUrl}`;
+
+        const states = {"al":"Alabama","ak":"Alaska","az":"Arizona","ar":"Arkansas","ca":"California","co":"Colorado","ct":"Connecticut","de":"Delaware","dc":"District of Columbia","fl":"Florida","ga":"Georgia","hi":"Hawaii","id":"Idaho","il":"Illinois","in":"Indiana","ia":"Iowa","ks":"Kansas","ky":"Kentucky","la":"Louisiana","me":"Maine","md":"Maryland","ma":"Massachusetts","mi":"Michigan","mn":"Minnesota","ms":"Mississippi","mo":"Missouri","mt":"Montana","ne":"Nebraska","nv":"Nevada","nh":"New Hampshire","nj":"New Jersey","nm":"New Mexico","ny":"New York","nc":"North Carolina","nd":"North Dakota","oh":"Ohio","ok":"Oklahoma","or":"Oregon","pa":"Pennsylvania","ri":"Rhode Island","sc":"South Carolina","sd":"South Dakota","tn":"Tennessee","tx":"Texas","ut":"Utah","vt":"Vermont","va":"Virginia","wa":"Washington","wv":"West Virginia","wi":"Wisconsin","wy":"Wyoming"};
+        const grid = document.getElementById('state-grid');
+        Object.keys(states).sort().forEach(code => {
+            const a = document.createElement('a'); a.href = code + ".html"; a.className = "state-card"; a.innerText = states[code]; grid.appendChild(a);
+        });
+    </script>
+</body>
+</html>

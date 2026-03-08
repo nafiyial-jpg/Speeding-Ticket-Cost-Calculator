@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pennsylvania Speeding Ticket Cost 2026 | Calculator</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com">
+    <style>
+        :root { --primary: #0f172a; --accent: #2563eb; --bg: #f8fafc; --white: #ffffff; --border: #e2e8f0; }
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--primary); margin: 0; padding: 0; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 15px; }
+        .hero { text-align: center; padding: 35px 10px 20px 10px; }
+        h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.04em; margin: 0; line-height: 1.1; }
+        .calc-card { background: #fff; max-width: 550px; margin: 0 auto 40px auto; padding: 30px 20px; border-radius: 24px; border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+        label { display: block; margin-bottom: 8px; font-size: 0.75rem; font-weight: 800; color: #64748b; text-transform: uppercase; }
+        input, select { width: 100%; height: 58px; background: #f1f5f9; border: 2px solid transparent; border-radius: 14px; font-size: 16px; margin-bottom: 25px; padding: 0 15px; }
+        .ts-check { display: flex; align-items: center; gap: 12px; margin-bottom: 30px; padding: 18px; background: #f8fafc; border-radius: 14px; border: 1px solid var(--border); cursor: pointer; font-weight: 600; }
+        .ts-check input { width: 22px; height: 22px; margin: 0; accent-color: var(--accent); }
+        button.main-btn { width: 100%; height: 65px; background: var(--accent); color: #fff; border: none; border-radius: 18px; font-weight: 800; font-size: 1.15rem; cursor: pointer; transition: 0.3s; box-shadow: 0 8px 15px rgba(37, 99, 235, 0.2); }
+        .results { display: none; margin-top: 30px; animation: slideUp 0.4s ease-out; }
+        .ad-native { text-align: center; padding: 15px; background: #fff; border: 1px solid var(--border); border-radius: 12px; margin-bottom: 20px; }
+        .ad-native a { color: var(--accent); text-decoration: none; font-weight: 700; font-size: 0.95rem; }
+        .total-box { background: var(--primary); color: #fff; padding: 30px 20px; border-radius: 22px; text-align: center; margin-bottom: 20px; }
+        .val { font-size: 3.5rem; font-weight: 800; margin-top: 5px; color: #3b82f6; }
+        .share-row { display: flex; gap: 10px; margin-bottom: 25px; justify-content: center; }
+        .share-btn { flex: 1; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 10px; text-decoration: none; font-size: 0.8rem; font-weight: 700; color: #fff; cursor: pointer; }
+        .fb { background: #1877F2; } .tw { background: #000; } .wa { background: #25D366; }
+        footer { text-align: center; padding: 30px 0; border-top: 1px solid var(--border); color: #94a3b8 !important; margin-top: 40px; }
+        footer p { font-size: 13px !important; margin: 8px 0 !important; color: #94a3b8 !important; font-weight: 400 !important; }
+        footer a { color: var(--accent) !important; text-decoration: none !important; font-weight: 700 !important; font-size: 13px !important; margin: 0 10px; }
+        @keyframes slideUp { from { opacity:0; transform: translateY(20px); } to { opacity:1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="hero"><h1>Pennsylvania Impact</h1></header>
+        <main class="calc-card">
+            <label>Monthly Insurance ($)</label>
+            <input type="number" id="ins" value="160" inputmode="decimal">
+            <label>Violation Range</label>
+            <select id="mph"><option value="1.0">1-10 MPH Over</option><option value="1.7">11-20 MPH Over</option></select>
+            <label class="ts-check"><input type="checkbox" id="ts_active" checked><span>Attend Pennsylvania Traffic School?</span></label>
+            <button class="main-btn" onclick="calc()">Calculate Total Cost</button>
+            <div id="res" class="results">
+                <div class="ad-native"><span>SPONSORED</span><a href="#">Save on Pennsylvania Insurance ��</a></div>
+                <div class="total-box"><span style="font-size: 0.75rem; font-weight: 600; color: #94a3b8;">Total 3-Year Estimated Loss</span><div class="val" id="val"></div></div>
+                <div class="share-row">
+                    <button onclick="share('fb')" class="share-btn fb">FB</button>
+                    <button onclick="share('tw')" class="share-btn tw">X</button>
+                    <button onclick="share('wa')" class="share-btn wa">WhatsApp</button>
+                </div>
+                <div class="policy-note"><p><strong>Policy:</strong> Points reduced by 3 for every 12 months of violation-free driving.</p></div>
+            </div>
+        </main>
+        <footer><p>c 2026 Ticket Impact Tool. <a href="index.html">Home</a> <a href="privacy.html">Privacy Policy</a></p></footer>
+    </div>
+    <script>
+        let lastResult = 0;
+        function calc() {
+            const i = parseFloat(document.getElementById('ins').value) || 0;
+            const m = parseFloat(document.getElementById('mph').value);
+            const ts = document.getElementById('ts_active').checked;
+            lastResult = Math.round((150 * m) + (ts ? 0 : (i * 12 * 0.35 * 3)) + 0);
+            document.getElementById('res').style.display = 'block';
+            document.getElementById('val').innerText = '$' + lastResult.toLocaleString();
+            setTimeout(() => { window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }); }, 100);
+        }
+
+        function share(platform) {
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent("I just calculated the cost of a speeding ticket in Pennsylvania. The impact is $" + lastResult.toLocaleString() + "!");
+            let link = "";
+            if(platform === 'fb') link = "https://www.facebook.com" + url;
+            if(platform === 'tw') link = "https://twitter.com" + text + "&url=" + url;
+            if(platform === 'wa') link = "https://api.whatsapp.com" + text + " " + url;
+            window.open(link, '_blank');
+        }
+    </script>
+</body>
+</html>
