@@ -45,19 +45,42 @@
         <footer><p>© 2026 Ticket Impact Tool. For estimation purposes only.<a href="index.html">Home</a> <a href="privacy.html">Privacy Policy</a></p></footer>
     </div>
     <script>
-		// 自動初始化主頁分享連結
-		const currentUrl = encodeURIComponent(window.location.href);
-		const shareText = encodeURIComponent("Check out this 2026 Speeding Ticket & Insurance Cost Calculator!");
-		
-		document.getElementById('main-fb').href = `https://www.facebook.com{currentUrl}`;
-		document.getElementById('main-tw').href = `https://twitter.com{currentUrl}&text=${shareText}`;
-		document.getElementById('main-wa').href = `https://api.whatsapp.com{shareText}%20${currentUrl}`;
-
         const states = {"al":"Alabama","ak":"Alaska","az":"Arizona","ar":"Arkansas","ca":"California","co":"Colorado","ct":"Connecticut","de":"Delaware","dc":"District of Columbia","fl":"Florida","ga":"Georgia","hi":"Hawaii","id":"Idaho","il":"Illinois","in":"Indiana","ia":"Iowa","ks":"Kansas","ky":"Kentucky","la":"Louisiana","me":"Maine","md":"Maryland","ma":"Massachusetts","mi":"Michigan","mn":"Minnesota","ms":"Mississippi","mo":"Missouri","mt":"Montana","ne":"Nebraska","nv":"Nevada","nh":"New Hampshire","nj":"New Jersey","nm":"New Mexico","ny":"New York","nc":"North Carolina","nd":"North Dakota","oh":"Ohio","ok":"Oklahoma","or":"Oregon","pa":"Pennsylvania","ri":"Rhode Island","sc":"South Carolina","sd":"South Dakota","tn":"Tennessee","tx":"Texas","ut":"Utah","vt":"Vermont","va":"Virginia","wa":"Washington","wv":"West Virginia","wi":"Wisconsin","wy":"Wyoming"};
         const grid = document.getElementById('state-grid');
         Object.keys(states).sort().forEach(code => {
             const a = document.createElement('a'); a.href = code + ".html"; a.className = "state-card"; a.innerText = states[code]; grid.appendChild(a);
         });
-    </script>
+	   // --- 主頁專用動態分享邏輯 ---
+		function shareMain(platform) {
+			const currentUrl = window.location.href;
+			const title = "USA Speeding Ticket & Insurance Cost Calculator 2026";
+			const text = "Calculate how much a speeding ticket really costs in your state (Fines + Insurance Hike)!";
+
+			// 如果是手機，優先喚起原生分享介面 (最穩定)
+			if (navigator.share && /Android|iPhone|iPad/i.test(navigator.userAgent)) {
+				navigator.share({
+					title: title,
+					text: text,
+					url: currentUrl
+				}).catch(() => fallbackShare(platform, currentUrl, text));
+			} else {
+				fallbackShare(platform, currentUrl, text);
+			}
+		}
+
+		function fallbackShare(platform, url, text) {
+			let link = "";
+			const u = encodeURIComponent(url);
+			const t = encodeURIComponent(text);
+
+			if (platform === 'fb') link = `https://www.facebook.com{u}`;
+			if (platform === 'tw') link = `https://twitter.com{u}&text=${t}`;
+			if (platform === 'wa') link = `https://api.whatsapp.com{t}%20${u}`;
+
+			// 使用小彈窗開啟，避免離開主網頁
+			window.open(link, '_blank', 'width=600,height=450,resizable=yes');
+		}
+	</script>
 </body>
 </html>
+
