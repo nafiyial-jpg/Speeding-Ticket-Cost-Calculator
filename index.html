@@ -3,75 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO 標題：包含核心關鍵字與 2026 更新 -->
     <title>USA Speeding Ticket Cost & Insurance Hike Calculator 2026</title>
-    <meta name="description" content="Calculate the total financial impact of speeding tickets in 51 states. Estimate fines and insurance increases for 2026.">
+    <meta name="description" content="Calculate the total financial impact of speeding tickets across all 51 US states. Estimate statutory fines and 3-year insurance premium increases instantly for 2026.">
+    <meta name="keywords" content="speeding ticket cost usa, traffic fine calculator, insurance premium increase after ticket, speeding fine by state 2026">
+    
+    <!-- Open Graph (社群分享優化) -->
+    <meta property="og:title" content="2026 USA Speeding Ticket Impact Tool">
+    <meta property="og:description" content="Instant assessment of traffic fines and insurance surcharges for all 50 states.">
+    <meta property="og:type" content="website">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com">
     <style>
-        :root { --primary: #1e293b; --accent: #2563eb; --bg: #f8fafc; --white: #ffffff; --border: #e2e8f0; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--primary); margin: 0; padding: 0; }
+        :root { --primary: #1e293b; --accent: #2563eb; --bg: #f8fafc; --white: #ffffff; --border: #e2e8f0; --text-muted: #64748b; }
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--primary); margin: 0; padding: 0; line-height: 1.5; }
         .container { max-width: 1000px; margin: 0 auto; padding: 15px; }
+        
         .hero { text-align: center; padding: 45px 10px 25px 10px; }
-        h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.05em; margin: 0; line-height: 1.1; }
-        .sub-text { font-size: 1.1rem; color: #64748b; margin: 15px 0 30px 0; }
+        h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.05em; margin: 0 0 10px 0; line-height: 1.1; }
+        .sub-text { font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 30px auto; }
 
-        /* 分享區塊 */
-        .share-box { display: flex; gap: 10px; justify-content: center; margin-bottom: 40px; }
-        .s-btn { padding: 10px 20px; border-radius: 10px; color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 700; transition: 0.2s; }
-        .s-fb { background: #1877F2; } .s-tw { background: #000; } .s-wa { background: #25D366; }
-        .s-btn:hover { opacity: 0.8; transform: translateY(-2px); }
+        /* 廣告位：同步各州頁面風格 */
+        .ad-middle-native { 
+            text-align: center; padding: 18px; background: #fff; border: 1px solid var(--border); border-radius: 16px;
+            margin: 0 auto 40px auto; max-width: 728px;
+        }
+        .ad-middle-native span { font-size: 0.7rem; color: var(--text-muted); display: block; margin-bottom: 5px; text-transform: uppercase; font-weight: 600; }
+        .ad-middle-native a { color: var(--accent); text-decoration: none; font-weight: 700; font-size: 1rem; }
 
+        /* 州別網格：手機端 2 欄 */
         .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 50px; }
-        @media (min-width: 768px) { .grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); } }
-        .state-card { background: #fff; height: 75px; display: flex; align-items: center; justify-content: center; border-radius: 18px; text-decoration: none; color: var(--primary); font-weight: 700; border: 1px solid var(--border); transition: 0.2s; padding: 10px; text-align: center; }
-        .state-card:hover { background: var(--primary); color: #fff; transform: translateY(-3px); }
+        @media (min-width: 768px) { .grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 15px; } }
+        
+        .state-card { 
+            background: var(--white); height: 75px; display: flex; align-items: center; justify-content: center; 
+            border-radius: 18px; text-decoration: none; color: var(--primary); font-weight: 700; 
+            border: 1px solid var(--border); transition: 0.2s; padding: 10px; text-align: center; font-size: 0.95rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .state-card:hover, .state-card:active { background: var(--primary); color: #fff; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(30,41,59,0.1); }
 
-        footer { text-align: center; padding: 30px 0; border-top: 1px solid var(--border); color: #94a3b8 !important; margin-top: 40px; }
-        footer p { font-size: 13px !important; margin: 8px 0 !important; color: #94a3b8 !important; }
-        footer a { color: var(--accent) !important; text-decoration: none !important; font-weight: 700 !important; font-size: 13px !important; margin: 0 10px; }
+        /* SEO 內容區塊：增加頁面權重 */
+        .seo-content { 
+            background: var(--primary); color: #fff; padding: 40px; border-radius: 24px; margin-bottom: 50px; 
+        }
+        .seo-content h2 { font-size: 1.6rem; color: #fff; margin-top: 0; border-left: 5px solid var(--accent); padding-left: 15px; margin-bottom: 20px; }
+        .m-grid { display: grid; grid-template-columns: 1fr; gap: 25px; }
+        @media (min-width: 600px) { .m-grid { grid-template-columns: 1fr 1fr; } }
+        .m-item strong { display: block; color: #fff; margin-bottom: 8px; font-size: 1.1rem; }
+        .m-item p { font-size: 0.9rem; color: #94a3b8; margin: 0; line-height: 1.6; }
+
+        /* 強制同步頁尾 13px 灰色 */
+        footer { text-align: center; padding: 30px 0; border-top: 1px solid var(--border); color: #94a3b8 !important; margin-top: 40px; width: 100%; }
+        footer p { font-size: 13px !important; margin: 8px 0 !important; color: #94a3b8 !important; font-weight: 400 !important; }
+        footer a { color: var(--accent) !important; text-decoration: none !important; font-weight: 700 !important; margin: 0 10px; font-size: 13px !important; }
+
+        @media (max-width: 480px) { h1 { font-size: 2.1rem; } .seo-content { padding: 25px; } }
     </style>
 </head>
 <body>
     <div class="container">
         <header class="hero">
             <h1>Ticket Impact Tool</h1>
-            <p class="sub-text">Calculates 2026 speeding fines and insurance surcharges by state.</p>
-			<div class="share-box">
-			    <a href="javascript:void(0)" onclick="shareMain('fb')" class="s-btn s-fb">Share on FB</a>
-			    <a href="javascript:void(0)" onclick="shareMain('tw')" class="s-btn s-tw">Share on X</a>
-			    <a href="javascript:void(0)" onclick="shareMain('wa')" class="s-btn s-wa">WhatsApp</a>
-			</div>
+            <p class="sub-text">The most accurate 2026 assessment of traffic violations, fines, and long-term insurance surcharges across the United States.</p>
         </header>
+
+        <div class="ad-middle-native">
+            <span>SPONSORED</span>
+            <a href="#">Compare 2026 Insurance Rates & Lower Your Premium Today →</a>
+        </div>
+
+        <!-- 導航網格：對 SEO 內部連結非常有幫助 -->
         <nav class="grid" id="state-grid"></nav>
+
+        <!-- SEO 深度內容區塊：幫助關鍵字排名 -->
+        <section class="seo-content">
+            <h2>Data & Methodology 2026</h2>
+            <div class="m-grid">
+                <div class="m-item">
+                    <strong>Statutory Fines</strong>
+                    <p>Fines are sourced from 2026 legislative mandates. We account for base fines plus mandatory state surcharges.</p>
+                </div>
+                <div class="m-item">
+                    <strong>Insurance Actuarial Data</strong>
+                    <p>Impact is calculated based on a 36-month standard surcharge period for non-reckless speeding violations.</p>
+                </div>
+                <div class="m-item">
+                    <strong>Traffic School Mitigation</strong>
+                    <p>Our tool factors in state-specific point masking and traffic school deferral eligibility for 2026.</p>
+                </div>
+                <div class="m-item">
+                    <strong>Financial Planning</strong>
+                    <p>Providing drivers with a clear understanding of the "hidden costs" of speeding beyond the initial ticket.</p>
+                </div>
+            </div>
+        </section>
+
         <footer><p>© 2026 Ticket Impact Tool. For estimation purposes only.<a href="index.html">Home</a> <a href="privacy.html">Privacy Policy</a></p></footer>
     </div>
+
     <script>
         const states = {"al":"Alabama","ak":"Alaska","az":"Arizona","ar":"Arkansas","ca":"California","co":"Colorado","ct":"Connecticut","de":"Delaware","dc":"District of Columbia","fl":"Florida","ga":"Georgia","hi":"Hawaii","id":"Idaho","il":"Illinois","in":"Indiana","ia":"Iowa","ks":"Kansas","ky":"Kentucky","la":"Louisiana","me":"Maine","md":"Maryland","ma":"Massachusetts","mi":"Michigan","mn":"Minnesota","ms":"Mississippi","mo":"Missouri","mt":"Montana","ne":"Nebraska","nv":"Nevada","nh":"New Hampshire","nj":"New Jersey","nm":"New Mexico","ny":"New York","nc":"North Carolina","nd":"North Dakota","oh":"Ohio","ok":"Oklahoma","or":"Oregon","pa":"Pennsylvania","ri":"Rhode Island","sc":"South Carolina","sd":"South Dakota","tn":"Tennessee","tx":"Texas","ut":"Utah","vt":"Vermont","va":"Virginia","wa":"Washington","wv":"West Virginia","wi":"Wisconsin","wy":"Wyoming"};
         const grid = document.getElementById('state-grid');
         Object.keys(states).sort().forEach(code => {
-            const a = document.createElement('a'); a.href = code + ".html"; a.className = "state-card"; a.innerText = states[code]; grid.appendChild(a);
+            const a = document.createElement('a');
+            a.href = code + ".html"; a.className = "state-card"; a.innerText = states[code];
+            grid.appendChild(a);
         });
-		// --- 強制分享邏輯 ---
-		function shareMain(platform) {
-			// 取得目前網址，如果是在本地端測試(file://)，分享會跳轉但 FB 會顯示錯誤，這是正常的
-			const currentUrl = encodeURIComponent(window.location.href);
-			const shareText = encodeURIComponent("Check out this 2026 Speeding Ticket & Insurance Cost Calculator!");
-			
-			let link = "";
-			if (platform === 'fb') {
-				link = "https://www.facebook.com" + currentUrl;
-			} else if (platform === 'tw') {
-				link = "https://twitter.com" + currentUrl + "&text=" + shareText;
-			} else if (platform === 'wa') {
-				link = "https://api.whatsapp.com" + shareText + "%20" + currentUrl;
-			}
-
-			// 直接在當前分頁開啟或新分頁開啟，不使用彈窗以免被攔截
-			if (link !== "") {
-				window.open(link, '_blank');
-			}
-		}
-	</script>
+    </script>
 </body>
 </html>
-
-
