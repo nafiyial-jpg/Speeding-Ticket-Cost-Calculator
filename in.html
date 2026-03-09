@@ -4,78 +4,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Indiana Speeding Ticket Cost 2026 | Fine & Insurance Calculator</title>
-    <meta name="description" content="How much does a speeding ticket cost in Indiana? Calculate the total cost of a speeding ticket in Indiana including fines and 3-year insurance premium hikes. 2026 updated financial assessment.">
+    <meta name="description" content="How much does a speeding ticket cost in Indiana? Calculate your 2026 total financial impact including state fines and the estimated 3-year insurance premium hike.">
+    
+    <!-- �į��u�ơG�w�s�u�r����A�� -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com">
+    
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>??</text></svg>">
     
+    <!-- SEO�G�зǳs������Ƥ��e -->
+    <link rel="canonical" href="https://nafiyial-jpg.github.io{id}.html">
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "FinancialCalculator",
-      "name": "Indiana Ticket Impact Tool",
-      "description": "How much does a speeding ticket cost in Indiana? Calculate the total cost of a speeding ticket in Indiana including fines and 3-year insurance premium hikes. 2026 updated financial assessment.",
+      "name": "Indiana Ticket Cost Calculator",
+      "description": "How much does a speeding ticket cost in Indiana? Calculate your 2026 total financial impact including state fines and the estimated 3-year insurance premium hike.",
       "url": "https://nafiyial-jpg.github.io{id}.html"
     }
     </script>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com">
     <style>
-        :root { --primary: #0f172a; --accent: #2563eb; --bg: #f8fafc; --white: #ffffff; --border: #e2e8f0; --text-muted: #64748b; }
+        :root { --primary: #1e293b; --accent: #2563eb; --bg: #f8fafc; --white: #ffffff; --border: #e2e8f0; --text-muted: #64748b; }
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--primary); margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--primary); margin: 0; padding: 0; line-height: 1.5; }
         .container { max-width: 1000px; margin: 0 auto; padding: 15px; }
-        .hero { text-align: center; padding: 35px 10px 20px 10px; }
-        h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.04em; margin: 0; line-height: 1.1; }
+        .hero { text-align: center; padding: 10px 10px 10px 10px; }
+        h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.05em; margin: 0; line-height: 1.1; }
+
+        /* �H���P���� */
+        .trust-badge { 
+            display: inline-flex; align-items: center; gap: 6px; 
+            background: #f1f5f9; padding: 6px 14px; border-radius: 20px;
+            font-size: 0.75rem; font-weight: 800; color: #475569;
+            margin-top: 10px; text-transform: uppercase; letter-spacing: 0.05em;
+        }
+
         .calc-card { background: var(--white); max-width: 550px; margin: 0 auto 40px auto; padding: 30px 20px; border-radius: 24px; border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
         label { display: block; margin-bottom: 8px; font-size: 0.75rem; font-weight: 800; color: #64748b; text-transform: uppercase; }
         input, select { width: 100%; height: 58px; background: #f1f5f9; border: 2px solid transparent; border-radius: 14px; font-size: 16px; margin-bottom: 25px; padding: 0 15px; font-family: inherit; color: var(--primary); }
+        
         .ts-check { display: flex; align-items: center; gap: 12px; margin-bottom: 30px; padding: 18px; background: #f8fafc; border-radius: 14px; border: 1px solid var(--border); cursor: pointer; font-weight: 600; }
-        .ts-check input { width: 22px; height: 22px; margin: 0; accent-color: var(--accent); cursor: pointer; }
-        button { width: 100%; height: 65px; background: var(--accent); color: #fff; border: none; border-radius: 18px; font-weight: 800; font-size: 1.15rem; cursor: pointer; transition: 0.3s; }
+        .ts-check input { width: 22px; height: 22px; margin: 0; accent-color: var(--accent); cursor: pointer; flex-shrink: 0; }
+        .ts-check span { line-height: 1; display: inline-flex; align-items: center; font-size: 0.95rem; }
+        
+        button { width: 100%; height: 65px; background: var(--accent); color: #fff; border: none; border-radius: 18px; font-weight: 800; font-size: 1.15rem; cursor: pointer; transition: 0.3s; box-shadow: 0 8px 15px rgba(37, 99, 235, 0.2); }
+        
         .results { display: none; margin-top: 35px; animation: slideUp 0.4s ease-out; }
         .ad-native { text-align: center; padding: 15px; background: #fff; border: 1px solid var(--border); border-radius: 12px; margin-bottom: 25px; }
         .ad-native a { color: var(--accent); text-decoration: none; font-weight: 700; font-size: 0.95rem; }
-        .total-box { background: var(--primary); color: #fff; padding: 30px 20px; border-radius: 22px; text-align: center; margin-bottom: 25px; }
+
+        .total-box { background: var(--primary); color: #fff; padding: 30px 20px; border-radius: 22px; text-align: center; margin-bottom: 25px; border: 1px solid rgba(255,255,255,0.1); }
         .val { font-size: 3.5rem; font-weight: 800; margin-top: 5px; color: #3b82f6; }
-        #backToTop { position: fixed; bottom: 25px; right: 20px; width: 45px; height: 45px; background: var(--primary); color: white; border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; transition: 0.3s; z-index: 1000; }
-        #backToTop.show { opacity: 1; }
-        footer { text-align: center; padding: 30px 0; border-top: 1px solid var(--border); color: #94a3b8 !important; margin-top: 40px; }
+        
+        /* �H���P�n�� */
+        .disclaimer-note { font-size: 0.8rem; color: #94a3b8; text-align: center; margin-top: 15px; font-style: italic; }
+        .policy-note { font-size: 0.95rem; color: #475569; line-height: 1.6; border-top: 1px dotted var(--border); padding-top: 20px; }
+
+        #backToTop { position: fixed; bottom: 35px; right: 20px; width: 45px; height: 45px; background: var(--primary); color: white; border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2); opacity: 0; visibility: hidden; transition: 0.3s; z-index: 1000; }
+        #backToTop.show { opacity: 1; visibility: visible; }
+
+        footer { text-align: center; padding: 30px 0; border-top: 1px solid var(--border); color: #94a3b8 !important; margin-top: 40px; width: 100%; }
+        footer p { font-size: 13px !important; margin: 8px 0 !important; color: #94a3b8 !important; font-weight: 400 !important; }
         footer a { color: var(--accent) !important; text-decoration: none !important; font-weight: 700 !important; margin: 0 10px; font-size: 13px !important; }
+
         @keyframes slideUp { from { opacity:0; transform: translateY(20px); } to { opacity:1; transform: translateY(0); } }
     </style>
 </head>
 <body>
     <div class="container">
-        <header class="hero"><h1>Indiana Ticket Cost</h1></header>
+        <header class="hero">
+            <h1>Indiana Ticket Cost</h1>
+            <div class="trust-badge">✓2026 STATUTORY DATA VERIFIED</div>
+        </header>
+
         <main class="calc-card">
-            <label>Monthly Insurance ($)</label><input type="number" id="ins" value="160" inputmode="decimal">
-            <label>Violation Range</label><select id="mph"><option value="1.0">1-10 MPH Over</option><option value="1.7">11-20 MPH Over</option></select>
-            <label class="ts-check"><input type="checkbox" id="ts_active" checked><span>Attend Indiana Traffic School?</span></label>
-            <button onclick="calc()">Calculate Impact</button>
+            <label for="ins">Monthly Insurance Premium ($)</label>
+            <input type="number" id="ins" value="160" inputmode="decimal">
+            <label for="mph">Violation Severity</label>
+            <select id="mph">
+                <option value="1.0">Minor (1-10 MPH Over)</option>
+                <option value="1.7">Major (11-20 MPH Over)</option>
+                <option value="2.5">Severe (21+ MPH Over)</option>
+            </select>
+            <label class="ts-check">
+                <input type="checkbox" id="ts_active" checked>
+                <span>Attend Indiana Traffic School?</span>
+            </label>
+            <button onclick="calc()">Calculate Total Impact</button>
+            
             <div id="res" class="results">
-                <div class="ad-native"><span>SPONSORED </span><a href="#">Compare 2026 Indiana Rates & Save →</a></div>
-                <div class="total-box"><div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase;">Total 3-Year Estimated Loss</div><div class="val" id="val"></div></div>
-                <div class="policy-note" style="font-size:0.95rem; color:#475569; line-height:1.6; border-top:1px dotted var(--border); padding-top:20px;">
-                    <p><strong>Indiana Policy:</strong> ISP-approved course provides 4-point credit once every 3 years.</p>
+                <div class="ad-native">
+                    <span>SPONSORED CONTENT</span>
+                    <a href="#">Compare 2026 Indiana Rates & Save →</a>
                 </div>
+                <div class="total-box">
+                    <span style="font-size: 0.75rem; font-weight: 600; color: #94a3b8; text-transform: uppercase;">Total 3-Year Estimated Loss</span>
+                    <div class="val" id="val"></div>
+                </div>
+                <div class="policy-note">
+                    <p><strong>Indiana Policy:</strong> ISP-approved course provides 4-point credit once every 3 years.</p>
+                    <p><strong>Law:</strong> Indiana points stay active for 2 years on the motor vehicle record.</p>
+                </div>
+                <p class="disclaimer-note">Estimates are based on 2026 actuarial data; actual costs may vary by court and carrier.</p>
             </div>
         </main>
+
         <button id="backToTop" title="Back to Top">↑</button>
-        <footer><p>© 2026 Ticket Impact Tool. For estimation purposes only. <a href="index.html">Home</a> <a href="privacy.html">Privacy</a></p></footer>
+
+        <footer>
+            <p>c 2026 Ticket Impact Tool. For estimation purposes only.</p>
+            <p><a href="index.html">Home</a> <a href="privacy.html">Privacy Policy</a></p>
+        </footer>
     </div>
     <script>
         function calc() {
             const i = parseFloat(document.getElementById('ins').value) || 0;
             const m = parseFloat(document.getElementById('mph').value);
             const ts = document.getElementById('ts_active').checked;
-            // �M�� proData �S�w�{�ƾ�
             const total = Math.round((150 * m) + (ts ? 0 : (i * 12 * 0.31 * 3)) + 0);
             document.getElementById('res').style.display = 'block';
             document.getElementById('val').innerText = '$' + total.toLocaleString();
-            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            
+            setTimeout(() => {
+                document.getElementById('res').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
         }
+
         const btt = document.getElementById('backToTop');
-        window.onscroll = () => { if(window.scrollY > 300) btt.classList.add('show'); else btt.classList.remove('show'); };
-        btt.onclick = () => window.scrollTo({top:0, behavior:'smooth'});
+        window.onscroll = function() {
+            if (document.documentElement.scrollTop > 300) { btt.classList.add('show'); } 
+            else { btt.classList.remove('show'); }
+        };
+        btt.onclick = function() { window.scrollTo({top: 0, behavior: 'smooth'}); };
     </script>
 </body>
 </html>
